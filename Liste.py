@@ -8,7 +8,7 @@ class Liste:
 
     def ajoute (self, v):
         """ajoute v en tete de liste"""
-        self.tete=Cellule(v,self)
+        self.tete = Cellule(v, self.tete)         # et non self.tete=Cellule(v,self)                
 
     def est_vide(self):
         """renvoie True si la tete est vide, False sinon"""
@@ -88,12 +88,12 @@ l0 = Cellule(6, Cellule(1, Cellule(4, None)))
 assert str(l) == "3 5 2"
 assert longueur(l) ==  3
 assert nieme_element(2, l) == 2
-#assert concatener(l, l0) == 3 5 2 6 1 4
-#assert inverse(l) ==  Cellule(2, Cellule(5, Cellule(3, None)))
+assert str(concatener(l, l0)) == "3 5 2 6 1 4"       #assert concatener(l, l0) == 3 5 2 6 1 4
+assert str(inverse(l)) == '2 5 3'
 liste=Liste()
 liste.ajoute(5)
 liste.ajoute(9)
 assert not liste.est_vide()
-liste.len()
+assert len(liste) == 2          # et non liste.len()
 
 
